@@ -27,10 +27,11 @@ const Update = () => {
         `showLocator?brand=${brand}&locale=${locale}&locator=${locator}`,
         'GET'
       );
+      const oldloc = oldValue[0];
       setShowSummary((state) => {
         return {
           ...state,
-          oldValue: oldValue[0][`${brand}_${locale}`],
+          oldValue: oldloc[`${brand}_${locale}`],
           brand,
           locale,
         };
@@ -49,10 +50,11 @@ const Update = () => {
         `showLocator?brand=${brand}&locale=${locale}&locator=${locator}`,
         'GET'
       );
+      const data = newValue[0];
       setShowSummary((state) => {
         return {
           ...state,
-          updatedValue: newValue[0][`${brand}_${locale}`],
+          updatedValue: data[`${brand}_${locale}`],
         };
       });
 
