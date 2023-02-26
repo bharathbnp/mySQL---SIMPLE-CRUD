@@ -144,7 +144,7 @@ const Update = () => {
           <p>Brand: {brand}</p>
           <p>Locale: {locale}</p>
           <p className="text-red-500">
-            Previous Locator Value : {showSummary.oldValue}{' '}
+            Previous Locator Value : {!showSummary.oldValue && 'NULL'}
           </p>
           <p className="text-green-900 font-bold">
             New LocatorValue: {showSummary.updatedValue}

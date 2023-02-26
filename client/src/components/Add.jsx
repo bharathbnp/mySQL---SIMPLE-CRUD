@@ -43,7 +43,7 @@ const Add = () => {
       {showSummary && (
         <div className="flex flex-col my-2 mx-auto border border-blue-300 p-4 gap-6 items-center ">
           <p className="text-green-900 font-bold">
-            Successfully Inserted New Locator to DB
+            Successfully Inserted New Locator to Data Base
           </p>
           <Link to="/update">
             <button className="bg-blue-500 text-white px-2 py-1 rounded-sm">
