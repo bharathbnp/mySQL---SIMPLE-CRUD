@@ -1,24 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { apiCalls } from '../utils/APIRequests';
 
 const Add = () => {
   const [locator, setLocator] = useState('');
   const [showSummary, setShowSummary] = useState(false);
 
-  const addNewLocator = () => {
-    const addLocator = async () => {
-      try {
-        const add = await axios.post('http://localhost:8080/addLocator', {
-          locatorName: locator,
-        });
-        console.log(add);
-        setShowSummary(true);
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    addLocator();
+  const addNewLocator = async () => {
+    await apiCalls('addLocator', 'POST', { locatorName: locator });
+    setShowSummary(true);
   };
 
   return (

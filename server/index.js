@@ -40,6 +40,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/addLocator', (req, res) => {
+  console.log(req.body);
   const { locatorName } = req.body;
   console.log(locatorName);
   /**INSERT INTO my_table (id, name) VALUES (10, 'John'); */
@@ -50,8 +51,9 @@ app.post('/addLocator', (req, res) => {
   });
 });
 
-app.get('/showLocator', (req, res) => {
+app.get(`/showLocator`, (req, res) => {
   const { brand, locale, locator } = req.query;
+  console.log(brand, locale, locator);
   const brand_locale = `${brand}_${locale}`;
   const q = `SELECT ${brand_locale} FROM new_id WHERE Locator_name = "${locator}"`;
   db.query(q, (err, data) => {
