@@ -4,8 +4,8 @@ const Input = ({ input, locatorData, setDisplay, name }) => {
   const { isbrand, islocale, islocator, isupdateLocator } = input;
   const [brand, setbrand] = useState('');
   const [locale, setlocale] = useState('');
-  const [updatedLocator, setupdatedLocator] = useState('');
   const [locator, setLocator] = useState('');
+  const [updatedLocator, setupdatedLocator] = useState('');
 
   const sendData = () => {
     locatorData({
